@@ -588,6 +588,7 @@ abstract class WC_Shipping_Method extends WC_Settings_API {
 			}
 		}
 
+		wc_get_logger()->debug( 'Processing logs for admin on ' . $this.id . ' with ' . $this->get_instance_option_key(), array( 'source' => 'dario' ) );
 		return update_option( $this->get_instance_option_key(), apply_filters( 'woocommerce_shipping_' . $this->id . '_instance_settings_values', $this->instance_settings, $this ), 'yes' );
 	}
 }
